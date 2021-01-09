@@ -17,9 +17,9 @@ const grammar =
 
 // Ref: https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
 const SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
+  window.SpeechRecognition || (window as any).webkitSpeechRecognition;
 const SpeechGrammarList =
-  window.SpeechGrammarList || window.webkitSpeechGrammarList;
+  window.SpeechGrammarList || (window as any).webkitSpeechGrammarList;
 
 const recognition = new SpeechRecognition();
 const speechRecognitionList = new SpeechGrammarList();
@@ -30,7 +30,7 @@ recognition.lang = "en-US";
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-export default function Home() {
+export default function Home(props) {
   const [text, setText] = useState("");
   const [textRecognition, setTextRecognition] = useState("");
 
@@ -69,7 +69,7 @@ export default function Home() {
           value={text}
           onInput={(e) => {
             // ^ Update this to onChange if you're using React.
-            setText(e.target.value);
+            setText(e.currentTarget.value);
           }}
           onKeyDown={(e) => {
             if (e.key === ":" || e.keyCode === 186) {

@@ -68,7 +68,7 @@ export default function Home() {
           type="text"
           value={text}
           onInput={(e) => {
-						// ^ Update this to onChange if you're using React.
+            // ^ Update this to onChange if you're using React.
             setText(e.target.value);
           }}
           onKeyDown={(e) => {

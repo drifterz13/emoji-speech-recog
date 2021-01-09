@@ -60,40 +60,38 @@ export default function Home() {
   };
 
   return (
-    <>
-      <div className="App">
-        <h1>Emoji recognisation app.</h1>
-        <p>The recognition will start when you type ":"</p>
-        <input
-          type="text"
-          value={text}
-          onInput={(e) => {
-            // ^ Update this to onChange if you're using React.
-            setText(e.currentTarget.value);
-          }}
-          onKeyDown={(e) => {
-            if (e.key === ":" || e.keyCode === 186) {
-              console.log("gonna start recognition ..");
-              recognition.start();
-            }
-          }}
-        />
-        <p>Recognite word: {textRecognition}</p>
-        <hr />
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(10, 1fr)",
-            gridTemplateRows: "repeat(40, 1fr)",
-          }}
-        >
-          {emojis.map((emoji) => (
-            <div>
-              {emoji} {emojiMap[emoji]}
-            </div>
-          ))}
-        </div>
+    <div>
+      <h1>Emoji recognisation app.</h1>
+      <p>The recognition will start when you type ":"</p>
+      <input
+        type="text"
+        value={text}
+        onInput={(e) => {
+          // ^ Update this to onChange if you're using React.
+          setText(e.currentTarget.value);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === ":" || e.keyCode === 186) {
+            console.log("gonna start recognition ..");
+            recognition.start();
+          }
+        }}
+      />
+      <p>Recognite word: {textRecognition}</p>
+      <hr />
+      <div
+        style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(10, 1fr)",
+          gridTemplateRows: "repeat(40, 1fr)",
+        }}
+      >
+        {emojis.map((emoji) => (
+          <div>
+            {emoji} {emojiMap[emoji]}
+          </div>
+        ))}
       </div>
-    </>
+    </div>
   );
 }

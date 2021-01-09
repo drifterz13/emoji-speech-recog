@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+fsevents@^2.1.3:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.1.tgz#b209ab14c61012636c8863507edf7fb68cc54e9f"
+  integrity sha512-YR47Eg4hChJGAB1O3yEAOkGO+rlzutoICGqGo9EZ4lKWokzZRSyIW1QmTzqjtw8MJdj9srP869CuWw/hyzSiBw==
+
 preact-iso@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preact-iso/-/preact-iso-0.2.0.tgz#f7d00716b5e2cef72d9262199a9b44b7c35a9204"
@@ -12,7 +17,7 @@ preact@^10.5.9:
   resolved "https://registry.yarnpkg.com/preact/-/preact-10.5.9.tgz#8caba9288b4db1d593be2317467f8735e43cda0b"
   integrity sha512-X4m+4VMVINl/JFQKALOCwa3p8vhMAhBvle0hJ/W44w/WWfNb2TA7RNicDV3K2dNVs57f61GviEnVLiwN+fxiIg==
 
-wmr@^1.0.0:
+wmr@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/wmr/-/wmr-1.1.0.tgz#fb8098d0792ff4fa64872893ae3164fb3c991598"
   integrity sha512-ELll+l3wegNmYmPLoWUnPBzlv20we4zlM7jfKqP1tzYus8HUil65e8tNug2Vxbd++ROtT9qL54Qmo0DRze66tQ==

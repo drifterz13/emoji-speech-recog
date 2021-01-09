@@ -1,5 +1,5 @@
 import { useState } from "preact/hooks";
-import { emojiMap } from "./emojimap";
+import { emojiMap } from "../emojimap";
 
 function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
@@ -30,7 +30,7 @@ recognition.lang = "en-US";
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
-export default function Home(props) {
+export default function Home() {
   const [text, setText] = useState("");
   const [textRecognition, setTextRecognition] = useState("");
 

@@ -5,11 +5,6 @@ function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
-const SpeechRecognition =
-  window.SpeechRecognition || window.webkitSpeechRecognition;
-const SpeechGrammarList =
-  window.SpeechGrammarList || window.webkitSpeechGrammarList;
-
 // We need to combine all possible emoji name to `grammar` below to provide to the SpeechAPI
 // but we have too many emojis which cause the `grammar` string to exceed Javascript string length
 // so we have to get rid some data to solve this issue.
@@ -19,6 +14,12 @@ const emojis = Object.keys(emojiMap)
 
 const grammar =
   "#JSGF V1.0; grammar emojis; public <emoji> = " + emojis.join(" | ") + " ;";
+
+// Ref: https://developer.mozilla.org/en-US/docs/Web/API/SpeechRecognition
+const SpeechRecognition =
+  window.SpeechRecognition || window.webkitSpeechRecognition;
+const SpeechGrammarList =
+  window.SpeechGrammarList || window.webkitSpeechGrammarList;
 
 const recognition = new SpeechRecognition();
 const speechRecognitionList = new SpeechGrammarList();
@@ -67,6 +68,7 @@ export default function Home() {
           type="text"
           value={text}
           onInput={(e) => {
+						// ^ Update this to onChange if you're using React.
             setText(e.target.value);
           }}
           onKeyDown={(e) => {

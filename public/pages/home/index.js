@@ -1,5 +1,5 @@
 import { useState } from "preact/hooks";
-import emojiMap from "./simplemap.json";
+import { emojiMap } from "./emojimap";
 
 function isNumeric(n) {
   return !isNaN(parseFloat(n)) && isFinite(n);
@@ -62,11 +62,10 @@ export default function Home() {
     <>
       <div className="App">
         <h1>Emoji recognisation app.</h1>
-				<p>The recognition will start when you type ":"</p>
+        <p>The recognition will start when you type ":"</p>
         <input
           type="text"
-					value={text}
-					// Change this to `onChange` if you're using React.
+          value={text}
           onInput={(e) => {
             setText(e.target.value);
           }}
@@ -78,7 +77,7 @@ export default function Home() {
           }}
         />
         <p>Recognite word: {textRecognition}</p>
-				<hr />
+        <hr />
         <div
           style={{
             display: "grid",

@@ -1,7 +1,7 @@
 {
 	"scripts": {
 		"start": "wmr",
-		"build": "wmr build --prerender",
+		"build": "wmr build",
 		"serve": "wmr serve"
 	},
 	"eslintConfig": {
@@ -12,6 +12,7 @@
 		"react-dom": "preact/compat"
 	},
 	"dependencies": {
+		"preact": "^10.5.9",
 		"preact-iso": "^0.2.0"
 	},
 	"devDependencies": {

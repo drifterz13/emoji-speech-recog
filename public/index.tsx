@@ -1,7 +1,7 @@
 import { render } from "preact";
 import { LocationProvider, Router } from "preact-iso/router";
 import { ErrorBoundary } from "preact-iso/lazy";
-import Home from "./pages/home";
+import Home from "./pages/home/Home";
 import NotFound from "./pages/_404";
 
 export function App() {
